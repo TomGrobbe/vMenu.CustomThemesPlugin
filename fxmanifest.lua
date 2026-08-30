@@ -14,4 +14,5 @@ client_script 'client.js'
 files {
     'themes.json',
     'themes/*.css',
+    'banners/*.png',
 }

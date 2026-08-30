@@ -22,7 +22,7 @@ setr vMenu.Enhanced.MenuAppearance.Skin "reddead"
 ```json
 {
   "themes": [
-    { "id": "reddead", "name": "Red Dead", "css": "themes/red-dead.css", "banner": "default" },
+    { "id": "reddead", "name": "Red Dead", "css": "themes/red-dead.css", "banner": "banners/red-dead.png" },
     { "id": "mytheme", "name": "My Theme", "css": "themes/my-theme.css", "banner": "dark" }
   ]
 }
