@@ -1,8 +1,12 @@
 /*
-    Red Dead Redemption 2 flavoured, based on the example theme that ships with MenuAPI.
+    Red Dead Redemption 2 flavoured.
 
-    A theme is nothing but a list of colours and a font. Copy this file, change the values, and add
-    your copy to themes.json.
+    A theme is mostly a list of colours. Copy this file, change the values, and add your copy to
+    themes.json. The rules below the colours are extras this theme wants, you can drop them.
+
+    Two things a theme cannot do, so do not go looking for them: the title font on the banner is
+    picked by vMenu (the MenuAppearance.TitleFont setting), and the row counter sits in the bar under
+    the banner rather than at the bottom of the list like the real game menu.
 */
 
 @font-face {
@@ -13,59 +17,100 @@
     unicode-range: U+2190-2193;
 }
 
+@font-face {
+    /* Next to this file, so a path relative to the stylesheet is all it takes. */
+    font-family: "Barlow Semi Condensed";
+    font-style: normal;
+    font-weight: 500;
+    font-display: block;
+    src: url("../fonts/barlow-semi-condensed-500-latin.woff2") format("woff2");
+}
+
+@font-face {
+    font-family: "Barlow Semi Condensed";
+    font-style: normal;
+    font-weight: 600;
+    font-display: block;
+    src: url("../fonts/barlow-semi-condensed-600-latin.woff2") format("woff2");
+}
+
 #menuapi {
-    --menuapi-font: "GTA Chalet Arrows", Georgia, "Times New Roman", "Book Antiqua", serif;
+    --menuapi-font: "GTA Chalet Arrows", "Barlow Semi Condensed", "Arial Narrow", Arial, sans-serif;
 
     --menuapi-radius: 0px;
-    --menuapi-shadow: 0 2px 10px rgb(0 0 0 / 60%);
+    --menuapi-shadow: 0 2px 12px rgb(0 0 0 / 65%);
 
-    /* The bar under the banner, with the menu name and the row counter. */
-    --menuapi-subtitle-bg: rgb(14 9 8 / 97%);
-    --menuapi-subtitle-text: rgb(226 205 168);
-    --menuapi-freemode: rgb(214 178 116);
+    /* The bar under the banner. The gradient carries the banner's red on down into it. */
+    --menuapi-subtitle-bg: linear-gradient(90deg, rgb(74 14 11), rgb(168 34 28) 45%, rgb(74 14 11));
+    --menuapi-subtitle-text: rgb(250 244 236);
+    --menuapi-freemode: rgb(240 214 168);
 
     /* The rows themselves, and the one the player is standing on. */
-    --menuapi-rows-bg: rgb(14 9 8 / 84%);
-    --menuapi-row-text: rgb(232 219 196);
-    --menuapi-row-selected-bg: rgb(146 27 23 / 94%);
-    --menuapi-row-selected-text: rgb(246 234 212);
-    --menuapi-row-disabled-text: rgb(122 104 86);
-    --menuapi-row-selected-disabled-text: rgb(198 160 148);
+    --menuapi-rows-bg: rgb(10 8 8 / 88%);
+    --menuapi-row-text: rgb(238 231 220);
+    --menuapi-row-selected-bg: rgb(196 32 28 / 96%);
+    --menuapi-row-selected-text: rgb(255 250 244);
+    --menuapi-row-disabled-text: rgb(126 110 96);
+    --menuapi-row-selected-disabled-text: rgb(255 216 208 / 70%);
 
-    --menuapi-header-text: rgb(244 231 206);
-    --menuapi-slider-divider: rgb(226 205 168);
+    --menuapi-header-text: rgb(250 244 236);
+    --menuapi-slider-divider: rgb(240 214 168);
 
-    /* The description box under the menu, and the "more rows below" strip. */
-    --menuapi-overflow-bg: rgb(14 9 8 / 84%);
-    --menuapi-desc-bg: rgb(14 9 8 / 84%);
-    --menuapi-desc-rule: rgb(146 27 23 / 85%);
+    /* The description box under the menu, and the counter strip between the two. */
+    --menuapi-overflow-bg: rgb(44 36 34 / 92%);
+    --menuapi-desc-bg: rgb(10 8 8 / 92%);
+    --menuapi-desc-rule: rgb(196 32 28);
 
     /* The vehicle and player stat bars. */
-    --menuapi-stats-bg: rgb(14 9 8 / 84%);
+    --menuapi-stats-bg: rgb(10 8 8 / 92%);
     --menuapi-stat-track: rgb(62 46 38 / 85%);
-    --menuapi-stat-value: rgb(196 62 44);
-    --menuapi-stat-upgrade: rgb(214 178 116);
+    --menuapi-stat-value: rgb(196 32 28);
+    --menuapi-stat-upgrade: rgb(240 214 168);
     --menuapi-stat-upgrade-reduced: rgb(120 22 18);
 
     /* The colour picker panel. */
-    --menuapi-panel-bg: rgb(14 9 8 / 92%);
-    --menuapi-panel-accent: 196, 62, 44;
-    --menuapi-panel-text: rgb(232 219 196);
-    --menuapi-panel-swatch-selected: rgb(244 231 206);
-    --menuapi-panel-opacity-bar: rgb(88 66 54);
+    --menuapi-panel-bg: rgb(10 8 8 / 94%);
+    --menuapi-panel-accent: 196, 32, 28;
+    --menuapi-panel-text: rgb(238 231 220);
+    --menuapi-panel-swatch-selected: rgb(250 244 236);
+    --menuapi-panel-opacity-bar: rgb(96 72 58);
 }
 
-/* Rounded corners, if you give the theme a radius above. Harmless at 0. */
-#menuapi .menuapi-header {
-    border-radius: var(--menuapi-radius) var(--menuapi-radius) 0 0;
+/*
+    The game menu centres this line under the title, so this one does too. The row counter keeps its
+    place on the right, which means the centre is a touch to the left of true centre.
+*/
+#menuapi .menuapi-subtitle__text {
+    flex: 1;
+    text-align: center;
+    font-weight: 600;
+    letter-spacing: 0.06em;
 }
 
+#menuapi .menuapi-subtitle__counter {
+    color: rgb(255 255 255 / 62%);
+    font-weight: 500;
+}
+
+/* The strip carrying the scroll arrows, a dull grey band like the counter bar in the game menu. */
+#menuapi .menuapi-overflow {
+    color: rgb(255 255 255 / 45%);
+}
+
+/* Descriptions are centred in the game menu, and the red rule reads as the edge of the panel. */
+#menuapi .menuapi-desc {
+    text-align: center;
+    overflow: hidden;
+}
+
+#menuapi .menuapi-desc::before {
+    height: 3px;
+}
+
+/* Nothing is rounded in this one, kept here so raising the radius above still works. */
+#menuapi .menuapi-header,
 #menuapi .menuapi-header__glare {
     border-radius: var(--menuapi-radius) var(--menuapi-radius) 0 0;
-}
-
-#menuapi .menuapi-desc {
-    overflow: hidden;
 }
 
 #menuapi .menuapi-row:last-child {

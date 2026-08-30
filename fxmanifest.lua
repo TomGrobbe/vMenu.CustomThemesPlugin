@@ -15,4 +15,5 @@ files {
     'themes.json',
     'themes/*.css',
     'banners/*.png',
+    'fonts/*.woff2',
 }
