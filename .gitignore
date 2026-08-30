@@ -1,0 +1,8 @@
+# Visual Studio, VS Code and Rider leftovers.
+.vs/
+.idea/
+*.user
+
+# Windows and macOS leftovers.
+Thumbs.db
+.DS_Store

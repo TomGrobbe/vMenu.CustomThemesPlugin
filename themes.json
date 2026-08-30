@@ -1,0 +1,10 @@
+{
+  "themes": [
+    {
+      "id": "reddead",
+      "name": "Red Dead",
+      "css": "themes/red-dead.css",
+      "banner": "default"
+    }
+  ]
+}
