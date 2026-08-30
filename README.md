@@ -31,7 +31,7 @@ setr vMenu.Enhanced.MenuAppearance.Skin "reddead"
 - **id** is the short name the theme is known by, the one the `Skin` setting takes. It cannot be one of vMenu's own names (`default`, `dark`, `cartoon`, `gta`).
 - **name** is what players read. Leave it out and the id is used.
 - **css** is the path to your stylesheet in this resource. Anything outside the `themes` folder needs its own line under `files` in `fxmanifest.lua`.
-- **banner** is the picture on top of the menu: `default`, `dark`, `cartoon`, or `none` for the plain GTA one.
+- **banner** is the picture on top of the menu: `default`, `dark`, `cartoon`, `none` for the plain GTA one, or your own image, `banners/my-banner.png` for instance. Roughly 1000x220 keeps it sharp, and it needs its own line under `files` in `fxmanifest.lua`.
 
 3. Run `restart vMenu.CustomThemesPlugin` in the server console.
 
