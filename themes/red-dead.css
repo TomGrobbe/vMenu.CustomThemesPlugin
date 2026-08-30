@@ -6,7 +6,8 @@
 
     Two things a theme cannot do, so do not go looking for them: the title font on the banner is
     picked by vMenu (the MenuAppearance.TitleFont setting), and the row counter sits in the bar under
-    the banner rather than at the bottom of the list like the real game menu.
+    the banner rather than at the bottom of the list like the real game menu. The line under the
+    title stays on the left for the same reason, centring it around the counter looked lopsided.
 */
 
 @font-face {
@@ -76,13 +77,7 @@
     --menuapi-panel-opacity-bar: rgb(96 72 58);
 }
 
-/*
-    The game menu centres this line under the title, so this one does too. The row counter keeps its
-    place on the right, which means the centre is a touch to the left of true centre.
-*/
 #menuapi .menuapi-subtitle__text {
-    flex: 1;
-    text-align: center;
     font-weight: 600;
     letter-spacing: 0.06em;
 }
