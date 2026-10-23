@@ -28,14 +28,16 @@ setr vMenu.Enhanced.MenuAppearance.Skin "reddead"
 }
 ```
 
-- **id** is the short name the theme is known by, the one the `Skin` setting takes. It cannot be one of vMenu's own names (`default`, `dark`, `cartoon`, `gta`).
+- **id** is the short name the theme is known by, the one the `Skin` setting takes. It cannot be one of vMenu's own names: `default`, `gold`, `green`, `red`, `dark`, `cartoon` or `gta`. Their other spellings are taken too, like `vmenu`, `vmenu-gold`, `none` and `vanilla`.
 - **name** is what players read. Leave it out and the id is used.
 - **css** is the path to your stylesheet in this resource. Anything outside the `themes` folder needs its own line under `files` in `fxmanifest.lua`.
-- **banner** is the picture on top of the menu: `default`, `dark`, `cartoon`, `none` for the plain GTA one, or your own image, `banners/my-banner.png` for instance. Roughly 1000x220 keeps it sharp, and it needs its own line under `files` in `fxmanifest.lua`.
+- **banner** is the picture on top of the menu: `default`, `gold`, `green`, `red`, `dark`, `cartoon`, `none` for the plain GTA one, or your own image, `banners/my-banner.png` for instance. Roughly 1000x220 keeps it sharp, and it needs its own line under `files` in `fxmanifest.lua`.
 
 3. Run `restart vMenu.CustomThemesPlugin` in the server console.
 
-Every colour you can set is listed in the [MenuAPI theming docs](https://docs.vespura.com/menuapi/enhanced/reference/theming/), which is the menu library vMenu draws with.
+Every colour you can set is listed in the [MenuAPI theming docs](https://docs.vespura.com/menuapi/fivem/reference/theming/), which is the menu library vMenu draws with.
+
+A theme can also style the button hints in the bottom right of the screen, the bar that tells players which key does what. Those settings go in a `#menuapi-buttons` block instead of `#menuapi`, the bottom of `themes/red-dead.css` has an example. Leave the block out and the hints keep the look of the game itself. Unlike the menu, the hints can also be resized and spaced out differently, see the [instructional buttons section](https://docs.vespura.com/menuapi/fivem/reference/theming/#instructional-buttons) of the MenuAPI docs.
 
 Two things worth knowing. Your game caches stylesheets it has already downloaded, so restart your game client if a colour you changed does not show up. And anything that went wrong is written to your client console, which you open with F8.
 

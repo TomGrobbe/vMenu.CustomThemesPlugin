@@ -111,3 +111,32 @@
 #menuapi .menuapi-row:last-child {
     border-radius: 0 0 var(--menuapi-radius) var(--menuapi-radius);
 }
+
+/* The button hints in the bottom right. Every setting is listed in the MenuAPI theming docs. */
+#menuapi-buttons {
+    --menuapi-buttons-font: "Barlow Semi Condensed", "Arial Narrow", Arial, sans-serif;
+    --menuapi-buttons-font-size: 19px;
+    --menuapi-buttons-font-weight: 600;
+    --menuapi-buttons-text: rgb(238 231 220);
+
+    --menuapi-buttons-bg: rgb(10 8 8 / 88%);
+    --menuapi-buttons-radius: 0px;
+    --menuapi-buttons-shadow: 0 2px 12px rgb(0 0 0 / 65%);
+    --menuapi-buttons-border: 1px solid rgb(196 32 28 / 55%);
+    --menuapi-buttons-separator: 1px solid rgb(196 32 28 / 45%);
+
+    --menuapi-buttons-key-font: "Barlow Semi Condensed", "Arial Narrow", Arial, sans-serif;
+    --menuapi-buttons-key-font-weight: 600;
+    --menuapi-buttons-key-radius: 2px;
+    --menuapi-buttons-key-bg: rgb(238 231 220);
+    --menuapi-buttons-key-text: rgb(20 14 12);
+
+    --menuapi-buttons-pad: rgb(196 32 28);
+    --menuapi-buttons-pad-text: rgb(255 250 244);
+    --menuapi-buttons-mouse: rgb(238 231 220);
+    --menuapi-buttons-mouse-lines: rgb(20 14 12);
+    --menuapi-buttons-mouse-highlight: rgb(196 32 28);
+    --menuapi-buttons-plus: rgb(240 214 168);
+    --menuapi-buttons-spinner: rgb(238 231 220);
+    --menuapi-buttons-spinner-alt: rgb(240 214 168);
+}
